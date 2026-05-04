@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ina Chen — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-page: #f2f2f2;
+        --text: #0a0a0a;
+        --text-muted: #5c5c5c;
+        /* Hero pastel diagonal (左上粉青 → 中段暖米色 → 右下蜜桃橘) */
+        --hero-gradient-start: #b0e0e6;
+        --hero-gradient-mid: #ded6cc;
+        --hero-gradient-warm: #f0cfa8;
+        --hero-gradient-end: #ffdab9;
+        --pill-bg: rgba(12, 12, 12, 0.88);
+        --card-radius: 14px;
+        --container: min(1120px, calc(100% - clamp(20px, 6vw, 48px)));
+
+        --reveal-distance: clamp(28px, 5vw, 44px);
+        --reveal-duration: 0.92s;
+        /* fast start → long tail decel (輕煞車感) */
+        --reveal-ease: cubic-bezier(0.19, 0.88, 0.34, 1);
+        --reveal-delay: 0ms;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        color: var(--text);
+        background: var(--bg-page);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* —— Hero —— */
+      .hero {
+        position: relative;
+        min-height: clamp(520px, 78vh, 720px);
+        padding: clamp(20px, 4vw, 40px) 0 clamp(56px, 10vw, 88px);
+        overflow: hidden;
+        background-color: var(--hero-gradient-mid);
+        background-image:
+          /* soft diagonal veil (對齊主漸層方向，保留輕質感不干擾色帶) */
+          repeating-linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16) 0,
+            rgba(255, 255, 255, 0.16) 1px,
+            transparent 1px,
+            transparent 74px
+          ),
+          repeating-linear-gradient(
+            128deg,
+            rgba(176, 224, 230, 0.18) 0,
+            rgba(176, 224, 230, 0.18) 2px,
+            transparent 2px,
+            transparent 98px
+          ),
+          radial-gradient(
+            ellipse 120% 80% at 18% -8%,
+            rgba(255, 255, 255, 0.42),
+            transparent 54%
+          ),
+          radial-gradient(
+            ellipse 88% 58% at 86% 18%,
+            rgba(255, 218, 185, 0.35),
+            transparent 46%
+          ),
+          linear-gradient(
+            135deg,
+            var(--hero-gradient-start) 0%,
+            var(--hero-gradient-start) 8%,
+            var(--hero-gradient-mid) 46%,
+            var(--hero-gradient-warm) 76%,
+            var(--hero-gradient-end) 100%
+          );
+      }
+
+      .hero-inner {
+        width: var(--container);
+        margin: 0 auto;
+      }
+
+      .status-pill {
+        display: flex;
+        justify-content: center;
+        margin-bottom: clamp(32px, 8vw, 72px);
+      }
+
+      .status-pill span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: var(--pill-bg);
+        color: #f5f5f5;
+        font-size: clamp(11px, 2.8vw, 13px);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      .status-pill .star {
+        font-size: 0.95em;
+        opacity: 0.9;
+      }
+
+      .hero-kicker {
+        margin: 0 0 clamp(12px, 2.5vw, 20px);
+        max-width: 28rem;
+        font-size: clamp(14px, 2.8vw, 17px);
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+      }
+
+      .hero-title {
+        margin: 0;
+        font-family: "Syne", "Inter", sans-serif;
+        font-weight: 800;
+        font-size: clamp(3.35rem, 14vw, 8.75rem);
+        line-height: 0.92;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .hero-title .hero-title-line {
+        display: block;
+      }
+
+      /* —— Work section —— */
+      .work-section {
+        padding: clamp(48px, 9vw, 100px) 0 clamp(72px, 12vw, 120px);
+      }
+
+      .work-header {
+        text-align: center;
+        margin-bottom: clamp(40px, 7vw, 72px);
+      }
+
+      .work-script {
+        margin: 0 0 8px;
+        font-family: "Allura", cursive;
+        font-size: clamp(28px, 6vw, 44px);
+        font-weight: 400;
+        line-height: 1.15;
+        color: #171717;
+      }
+
+      .work-heading {
+        margin: 0;
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.05rem, 3.2vw, 1.5rem);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .projects {
+        width: var(--container);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(48px, 8vw, 80px);
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .thumb {
+        margin: 0;
+        border-radius: var(--card-radius);
+        overflow: hidden;
+        box-shadow:
+          0 24px 48px rgba(18, 18, 18, 0.08),
+          0 4px 12px rgba(18, 18, 18, 0.04);
+      }
+
+      .thumb img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .meta {
+        padding-top: clamp(16px, 2.8vw, 22px);
+        max-width: 48rem;
+      }
+
+      .meta h3 {
+        margin: 0 0 6px;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.15rem, 3vw, 1.55rem);
+        letter-spacing: -0.02em;
+      }
+
+      .meta p {
+        margin: 0;
+        font-size: clamp(13px, 2.8vw, 15px);
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+
+      /* optional subtle hover for cards */
+      .project-card:hover .thumb {
+        box-shadow:
+          0 28px 56px rgba(18, 18, 18, 0.1),
+          0 8px 16px rgba(18, 18, 18, 0.05);
+      }
+
+      /* —— Footer spacer —— */
+      .bottom-spacer {
+        height: clamp(40px, 8vw, 80px);
+      }
+
+      /* —— Scroll / load reveals —— */
+      .reveal {
+        opacity: 0;
+        transform: translate3d(0, var(--reveal-distance), 0);
+        animation: none;
+        will-change: transform, opacity;
+      }
+
+      .reveal.is-visible {
+        animation-name: reveal-rise;
+        animation-duration: var(--reveal-duration);
+        animation-timing-function: var(--reveal-ease);
+        animation-delay: var(--reveal-delay);
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes reveal-rise {
+        from {
+          opacity: 0;
+          transform: translate3d(0, var(--reveal-distance), 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      /* —— Reduced motion —— */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          animation: none;
+          will-change: auto;
+        }
+
+        .project-card:hover .thumb {
+          box-shadow:
+            0 24px 48px rgba(18, 18, 18, 0.08),
+            0 4px 12px rgba(18, 18, 18, 0.04);
+        }
+      }
+
+      /* —— Small phones tightening —— */
+      @media (max-width: 380px) {
+        .hero-title {
+          letter-spacing: -0.04em;
+        }
+        .status-pill span {
+          padding-inline: 14px;
+          letter-spacing: 0.05em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" aria-label="Intro">
+      <div class="hero-inner">
+        <div class="status-pill reveal" style="--reveal-delay: 0ms">
+          <span>Available for freelancing<span class="star" aria-hidden="true"> ✶</span></span>
+        </div>
+        <p class="hero-kicker reveal" style="--reveal-delay: 100ms">
+          I&apos;m a product builder based in Taiwan.
+        </p>
+        <h1 class="hero-title">
+          <span class="hero-title-line reveal" style="--reveal-delay: 200ms">Ina</span>
+          <span class="hero-title-line reveal" style="--reveal-delay: 300ms">Chen</span>
+        </h1>
+      </div>
+    </header>
+
+    <section class="work-section" aria-labelledby="work-heading">
+      <header class="work-header">
+        <p class="work-script reveal" style="--reveal-delay: 0ms">Selected projects.</p>
+        <h2 id="work-heading" class="work-heading reveal" style="--reveal-delay: 120ms">
+          My latest work
+        </h2>
+      </header>
+
+      <div class="projects">
+        <article class="project-card reveal">
+          <a href="#">
+            <figure class="thumb">
+              <img
+                src="https://picsum.photos/id/668/1600/1000"
+                alt="Portfolio project preview — minimalist web interface mockup."
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
+            </figure>
+          </a>
+          <div class="meta">
+            <h3>Northwind Studio</h3>
+            <p>Product design · UX research · 2023</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="#">
+            <figure class="thumb">
+              <img
+                src="https://picsum.photos/id/180/1600/1000"
+                alt="Illustrative marketing visual with devices."
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
+            </figure>
+          </a>
+          <div class="meta">
+            <h3>VA · Business growth launch</h3>
+            <p>Illustration · Marketing site · 2023</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="#">
+            <figure class="thumb">
+              <img
+                src="https://picsum.photos/id/849/1600/1000"
+                alt="Bold graphic branding preview with textured background."
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
+            </figure>
+          </a>
+          <div class="meta">
+            <h3>Caldera</h3>
+            <p>Branding · Visual system · Product design · 2024</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="#">
+            <figure class="thumb">
+              <img
+                src="https://picsum.photos/id/539/1600/1000"
+                alt=""
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
+            </figure>
+          </a>
+          <div class="meta">
+            <h3>Obsidian Dash</h3>
+            <p>Dashboard UI · Dark mode · Motion · 2023</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="#">
+            <figure class="thumb">
+              <img
+                src="https://picsum.photos/id/964/1600/1000"
+                alt=""
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
+            </figure>
+          </a>
+          <div class="meta">
+            <h3>Pulse Wallet</h3>
+            <p>Design system · 2024</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="#">
+            <figure class="thumb">
+              <img
+                src="https://picsum.photos/id/669/1600/1000"
+                alt=""
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
+            </figure>
+          </a>
+          <div class="meta">
+            <h3>Focal Systems</h3>
+            <p>Brand identity · Graphic system · Print · 2022</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="bottom-spacer" aria-hidden="true"></div>
+
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var hero = document.querySelector(".hero-inner");
+        var toViewport = [];
+
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          if (hero && hero.contains(el)) return;
+          toViewport.push(el);
+        });
+
+        function show(el) {
+          el.classList.add("is-visible");
+        }
+
+        if (reduce) {
+          document.querySelectorAll(".reveal").forEach(show);
+          return;
+        }
+
+        hero
+          ? hero.querySelectorAll(".reveal").forEach(show)
+          : null;
+
+        if (!window.IntersectionObserver) {
+          toViewport.forEach(show);
+          return;
+        }
+
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              io.unobserve(entry.target);
+              show(entry.target);
+            });
+          },
+          { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0 }
+        );
+
+        toViewport.forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>
