@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cathaylife Sustainability — Ina Chen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific tokens (green sustainability theme) ── */
+    :root {
+      --accent: #2d6a4f;
+      --accent-mid: #52b788;
+      --accent-light: #d8f3dc;
+    }
+
+    .case-hero {
+      background: linear-gradient(155deg, #d8f3dc 0%, #b7e4c7 35%, #95d5b2 70%, #74c69d 100%);
+    }
+
+    .case-label       { background: rgba(45,106,79,0.14); color: var(--accent); }
+    .section-eyebrow  { color: var(--accent); }
+    .outcome-num      { color: var(--accent); }
+    .challenge-list li::before { background: var(--accent); }
+    .info-cell-value a { color: var(--accent); }
+
+    .next-banner {
+      background: linear-gradient(135deg, #d8f3dc 0%, #95d5b2 100%);
+    }
+
+    /* Strategy labels with nature colours */
+    .strategy-card:nth-child(1) .s-icon { background: #d8f3dc; color: #2d6a4f; }
+    .strategy-card:nth-child(2) .s-icon { background: #b7e4c7; color: #1b4332; }
+    .strategy-card:nth-child(3) .s-icon { background: #95d5b2; color: #1b4332; }
+
+    /* Quote callout block */
+    .callout {
+      border-left: 3px solid var(--accent-mid);
+      padding: 20px 24px;
+      background: var(--accent-light);
+      border-radius: 0 10px 10px 0;
+      margin: 24px 0;
+      font-size: clamp(14px, 2.5vw, 16px);
+      line-height: 1.75;
+      color: #1b4332;
+      font-style: italic;
+    }
+
+    /* Process steps */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      background: rgba(0,0,0,0.08);
+      margin-top: 24px;
+    }
+    .process-step {
+      background: var(--bg-page);
+      padding: 24px 22px 28px;
+    }
+    .process-step-num {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--accent-mid);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .process-step h4 {
+      margin: 0 0 8px;
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+    .process-step p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    /* Img placeholder style for missing images */
+    .img-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e9f5ee;
+      border: 2px dashed #95d5b2;
+      border-radius: var(--card-radius);
+      padding: 48px 24px;
+      margin-top: 28px;
+      text-align: center;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .img-placeholder code {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      opacity: 0.7;
+      font-family: monospace;
+    }
+
+    /* ── Feature gallery ── */
+    .feature-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .feature-gallery-item img {
+      display: block;
+      width: 100%;
+      border-radius: var(--card-radius);
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .feature-gallery-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .feature-gallery-pair img {
+      display: block;
+      width: 100%;
+      border-radius: var(--card-radius);
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    @media (max-width: 600px) {
+      .feature-gallery-pair {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Feature video & img ── */
+    .feature-video,
+    .feature-img-el {
+      display: block;
+      width: 100%;
+      border-radius: var(--card-radius);
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .feature-video {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Ina Chen</a>
+      <a class="nav-back" href="index.html#works">← Back to Works</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="case-hero">
+    <div class="case-hero-bg"></div>
+    <div class="case-hero-inner">
+      <div class="case-meta-row reveal" style="--d:0ms">
+        <span class="case-label">UX · PM</span>
+        <span class="case-tags">#PM #UX #insurance #web #sustainability</span>
+      </div>
+      <h1 class="case-title reveal" style="--d:120ms">
+        Promoted Insurance Brand's Sustainability
+      </h1>
+      <img class="case-cover reveal" style="--d:240ms"
+        src="images/image2.png"
+        alt="Cathaylife sustainability website"
+        loading="eager" />
+    </div>
+  </header>
+
+  <!-- ── Body ── -->
+  <main class="case-body">
+
+    <!-- Info grid -->
+    <div class="info-grid reveal" style="--d:0ms">
+      <div class="info-cell">
+        <div class="info-cell-label">Company</div>
+        <div class="info-cell-value">Cathaylife</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Role</div>
+        <div class="info-cell-value">Project manager,<br/>UX designer</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Duration</div>
+        <div class="info-cell-value">2023 · 7 months</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Tools</div>
+        <div class="info-cell-value">Figma · Keynote<br/>Notion · Excel</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Product</div>
+        <div class="info-cell-value">
+          <a href="https://www.cathaylife.com.tw/cathaylife/sustainability" target="_blank" rel="noopener">Website ↗︎</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About the project -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Context</p>
+      <h2 class="section-title">About the project</h2>
+      <div class="section-body">
+        <p>Cathaylife organized a competition inviting multiple teams to present their ideas for their corporate sustainability website revamp.</p>
+        <p>I am pleased to inform you that our idea and design won the competition, and we have been given the opportunity to bring our design to life through this project.</p>
+      </div>
+    </div>
+
+    <!-- Challenge -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Challenge</p>
+      <h2 class="section-title">Leading our team in the first 3D interactive project</h2>
+      <div class="section-body">
+        <p>This was our team's first 3D interactive project. It was challenging since we had no examples to follow for the design, building, or planning. As a new member, my main job was giving the team enough time and help. This was hard without having things we could copy.</p>
+      </div>
+    </div>
+
+    <!-- Outcome -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Outcome</p>
+      <h2 class="section-title">What we delivered</h2>
+      <div class="outcome-grid">
+        <div class="outcome-card">
+          <div class="outcome-num">🏆</div>
+          <div class="outcome-desc">Won the internal competition among multiple competing teams</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">RWD</div>
+          <div class="outcome-desc">Fully responsive website shipped to production</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">3D</div>
+          <div class="outcome-desc">First-ever 3D interactive experience built by the team</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Strategy -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Strategy</p>
+      <h2 class="section-title">Three design principles</h2>
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h4>Real</h4>
+          <p>Highlight the client's sustainability efforts with authentic, concrete content rather than lofty slogans.</p>
+        </div>
+        <div class="strategy-card">
+          <h4>Friendly</h4>
+          <p>Information flow is friendly to different stakeholders and users. Aim for an inclusive interface that accommodates bilingual preferences.</p>
+        </div>
+        <div class="strategy-card">
+          <h4>Innovative</h4>
+          <p>Display our innovation and creative power — to the client and to ourselves. Push the boundary with 3D interactivity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Strategy & Ideation -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Strategy & Ideation</p>
+      <h2 class="section-title">Research and planning</h2>
+
+      <!-- 1. Know our users -->
+      <div class="section-body" style="margin-bottom:16px">
+        <p><strong>1. Know our users</strong></p>
+        <p>For our strategic planning, we care about the users of this website which includes both the general public in large numbers and internal employees. Compared to judges or reviewers, what these broader user groups need is more concise, substantial content.</p>
+
+       <img class="img-full" style="margin-top:0" 
+        src="images/people.png"
+        alt="people"
+        loading="lazy" />
+      </div>
+
+      <!-- 2. Know CS trends -->
+      <div class="section-body" style="margin: 32px 0 16px">
+        <p><strong>2. Know CS trends</strong></p>
+        <p>In analyzing corporate sustainability efforts, I looked at brands in the same industry as our client as well as some prominent international companies. I found that most companies prioritize lofty slogans over concrete actions on their sustainability websites. The information is generally presented through dense blocks of text that are difficult to digest. As a result, it is challenging for users and stakeholders to quickly grasp each company's actual contributions to sustainability.</p>
+      <div class="img-grid-2">
+        <img class="img-full" style="margin-top:0" 
+        src="images/ref01.png"
+        alt="people"
+        loading="lazy" />
+        <img class="img-full" style="margin-top:0" 
+        src="images/ref02.png"
+        alt="people"
+        loading="lazy" />
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Identify the scope -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Scoping</p>
+      <h2 class="section-title">Identify the scope</h2>
+
+      <div class="callout">
+        "Before offering comprehensive, sustainable information, how might we provide users with an accessible, easily understandable experience that leaves a positive impression?"
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <h4>Kick-off meeting</h4>
+          <p>Narrow down the scope. Collaboration: understand the workflow with client — sign-off timelines for visual and internal features.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <h4>Time Roadmap</h4>
+          <p>Align the delivery stages to meet expectations and ensure feasibility for the development team.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <h4>Main user flow goal</h4>
+          <p>Provide multiple entrances for different types of users to keep them exploring. This encourages users to stay longer as they find what they were looking for.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04</div>
+          <h4>Site map</h4>
+          <p>Build the site map for discussions with stakeholders on feature priority and verify the hierarchy makes sense.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">05</div>
+          <h4>Wireframing</h4>
+          <p>Build the low-fidelity wireframe to check the content and layout with the team.</p>
+        </div>
+      </div>
+
+      <div class="img-grid-2" style="margin-top:28px">
+        <div>
+          <img class="img-full" style="margin-top:0"
+            src="images/cs_kickoff.png"
+            alt="Kick-off meeting scope"
+            loading="lazy" />
+          <p class="img-caption">Kick-off meeting scope</p>
+        </div>
+        <div>
+          <img class="img-full" style="margin-top:0"
+            src="images/cs_roadmap.png"
+            alt="Time roadmap"
+            loading="lazy" />
+          <p class="img-caption">Time roadmap</p>
+        </div>
+      </div>
+
+      <img class="img-full reveal" style="--d:0ms"
+        src="images/cs_userflow.png"
+        alt="Main user flow goals"
+        loading="lazy" />
+      <p class="img-caption">Main user flow goals</p>
+
+      <img class="img-full reveal" style="--d:0ms"
+        src="images/cs_sitemap.png"
+        alt="Site map"
+        loading="lazy" />
+      <p class="img-caption">Site map</p>
+
+      <img class="img-full reveal" style="--d:0ms"
+        src="images/cs_wireframe.png"
+        alt="Low-fidelity wireframes"
+        loading="lazy" />
+      <p class="img-caption">Low-fidelity wireframes</p>
+    </div>
+
+    <!-- Project story: Timeline -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Project Story</p>
+      <h2 class="section-title">Timeline for team</h2>
+      <div class="section-body">
+        <p>Lacking large and 3D project experience, our team was unsure how to coordinate detailed tasks. To kickstart progress, I collaborated with the main designer to map out design stages on paper first.</p>
+        <p>After testing this approach for several weeks, and finding the cadence for both internal collaboration and client cooperation, I digitized this timeline. Although the initial paper-heavy approach was wasteful, having such a visually clear method was tremendously helpful given the ambiguous circumstances.</p>
+      </div>
+      <img class="img-full reveal" style="--d:0ms"
+        src="images/cs_timeline.png"
+        alt="Project story timeline — from paper to digital"
+        loading="lazy" />
+      <p class="img-caption">Project story timeline — from paper to digital</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Design a Cathay Sustainable World -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Design Concept</p>
+      <h2 class="section-title">Design a Cathay Sustainable World</h2>
+      <div class="section-body">
+        <p>In the interaction concept, we came up with the idea of a Cathay sustainable world in which users can walk around the Cathay tree and explore and learn about different topics. The four topic marks are related to climate, health, empowerment, and governance. The walking character also indicates the high-influence walking campaign in Cathaylife.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Highlight features -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Design</p>
+      <h2 class="section-title">Highlight features</h2>
+
+      <div class="feature-list">
+
+        <div class="feature-item reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">01</div>
+            <h3>Interactive 3D Playground</h3>
+            <p>Design a 3D playground to enhance the interaction between users. The immersive experience allows visitors to explore sustainability topics in an engaging, memorable way.</p>
+          </div>
+          <div class="feature-img">
+            <video
+              class="feature-video"
+              src="images/film.mov"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
+
+        <div class="feature-item flip reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">02</div>
+            <h3>Display Consistency in Bilingual Interface</h3>
+            <p>Aim for an inclusive interface that tolerates bilingual preferences. Both Chinese and English content maintain the same visual rhythm and information hierarchy.</p>
+          </div>
+          <div class="feature-img">
+            <img class="feature-img-el"
+              src="images/cs_bilingual.png"
+              alt="Display consistency in bilingual interface"
+              loading="lazy" />
+          </div>
+        </div>
+
+        <div class="feature-item reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">03</div>
+            <h3>Easy to Find the Information for Every User</h3>
+            <p>Everyone can easily engage with sustainability content through neat and simple content. Investors and professional assessors can also quickly navigate to comprehensive reports.</p>
+          </div>
+          <div class="feature-img">
+            <img class="feature-img-el"
+              src="images/cs_findinfo.png"
+              alt="Easy to find the information for every user"
+              loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Feature gallery grid -->
+      <div class="feature-gallery reveal" style="--d:0ms">
+
+        <div class="feature-gallery-item">
+          <img src="images/cs_feature01.png" alt="" loading="lazy" />
+          <p class="img-caption"></p>
+        </div>
+
+        <div class="feature-gallery-item feature-gallery-item--pair">
+          <div class="feature-gallery-pair">
+            <div>
+              <img src="images/cs_feature02-1.png" alt="" loading="lazy" />
+              <p class="img-caption"></p>
+            </div>
+            <div>
+              <img src="images/cs_feature02-2.png" alt="" loading="lazy" />
+              <p class="img-caption"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-gallery-item">
+          <img src="images/cs_feature03.png" alt="" loading="lazy" />
+          <p class="img-caption"></p>
+        </div>
+
+        <div class="feature-gallery-item">
+          <img src="images/cs_feature04.png" alt="" loading="lazy" />
+          <p class="img-caption"></p>
+        </div>
+
+        <div class="feature-gallery-item">
+          <img src="images/cs_feature05.png" alt="" loading="lazy" />
+          <p class="img-caption"></p>
+        </div>
+
+        <div class="feature-gallery-item">
+          <img src="images/cs_feature06.png" alt="" loading="lazy" />
+          <p class="img-caption"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Takeaways -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Reflection</p>
+      <h2 class="section-title">Takeaways</h2>
+      <div class="takeaway-grid">
+        <div class="takeaway-card">
+          <h4>Build a regular catch-up culture</h4>
+          <p>Built up a regular catch-up culture which allows me to gather team members to follow up on project issues and quickly help everyone come up with solutions to make the project go well.</p>
+        </div>
+        <div class="takeaway-card">
+          <h4>Think in multiple situations early</h4>
+          <p>Also consider future updating situations such as updating content, extension pages, and displaying seasonal content — think in multiple situations when in the early phase of design.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next step -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Next Step</p>
+      <div class="next-banner">
+        <p>Sustainability is an ongoing journey —</p>
+        <p>more features and updates are in the pipeline!</p>
+        <p>Stay tuned for what's next 🌱</p>
+      </div>
+    </div>
+
+    <!-- Back to works -->
+    <div class="back-row reveal" style="--d:0ms">
+      <span class="back-row-label">Explore other works</span>
+      <a class="back-btn" href="index.html#works">← Back to Works</a>
+    </div>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

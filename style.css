@@ -929,3 +929,77 @@ body {
   transition: background 0.2s, transform 0.2s;
 }
 .back-btn:hover { background: #2a2a2a; transform: translateX(-3px); }
+
+/* ── Callout / blockquote ── */
+.callout {
+  border-left: 3px solid;
+  padding: 20px 24px;
+  border-radius: 0 10px 10px 0;
+  margin: 24px 0;
+  font-size: clamp(14px, 2.5vw, 16px);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* ── Process steps grid ── */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: rgba(0,0,0,0.08);
+  margin-top: 24px;
+}
+.process-step {
+  background: var(--bg-page);
+  padding: 24px 22px 28px;
+}
+.process-step-num {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+.process-step h4 {
+  margin: 0 0 8px;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+.process-step p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* ── Image placeholder (for missing assets) ── */
+.img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(0,0,0,0.15);
+  border-radius: var(--card-radius);
+  padding: 48px 24px;
+  margin-top: 28px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  min-height: 120px;
+}
+.img-placeholder code {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.6;
+  font-family: monospace;
+  letter-spacing: 0.03em;
+}
