@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cathaylife — Ina Chen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific tokens ── */
+    :root {
+      --accent: #4a7c5e;
+      --accent-light: #e8f2ec;
+      --bg: var(--bg-page);
+    }
+
+    /* Hero gradient for this project */
+    .case-hero {
+      background: linear-gradient(160deg, #e8f2ec 0%, #d6ead9 40%, #c8e0cc 100%);
+    }
+
+    /* Accent colour applications */
+    .case-label       { background: rgba(74,124,94,0.15); color: var(--accent); }
+    .section-eyebrow  { color: var(--accent); }
+    .outcome-num      { color: var(--accent); }
+    .challenge-list li::before { background: var(--accent); }
+    .info-cell-value a { color: var(--accent); }
+
+    /* Next step banner */
+    .next-banner {
+      background: linear-gradient(135deg, #e8f2ec 0%, #c8e0cc 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Ina Chen</a>
+      <a class="nav-back" href="index.html#works">← Back to Works</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="case-hero">
+    <div class="case-hero-bg"></div>
+    <div class="case-hero-inner">
+      <div class="case-meta-row reveal" style="--d:0ms">
+        <span class="case-label">UX · PM</span>
+        <span class="case-tags">#PM #UX #insurance #web #app</span>
+      </div>
+      <h1 class="case-title reveal" style="--d:120ms">
+        Redesigned the Online Shopping Experience of Insurance
+      </h1>
+      <img class="case-cover reveal" style="--d:240ms"
+        src="images/online.png"
+        alt="Cathaylife online insurance platform redesign cover"
+        loading="eager" />
+    </div>
+  </header>
+
+  <!-- Body -->
+  <main class="case-body">
+
+    <!-- Info grid -->
+    <div class="info-grid reveal" style="--d:0ms">
+      <div class="info-cell">
+        <div class="info-cell-label">Company</div>
+        <div class="info-cell-value">Cathaylife</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Role</div>
+        <div class="info-cell-value">Project manager,<br/>UX designer</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Duration</div>
+        <div class="info-cell-value">2023 · 7 months</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Tools</div>
+        <div class="info-cell-value">Figma · Notion · Excel</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Product</div>
+        <div class="info-cell-value">RWD Website</div>
+      </div>
+    </div>
+
+    <!-- Why revamp -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Context</p>
+      <h2 class="section-title">Why revamp?</h2>
+      <div class="section-body">
+        <p>To enhance user engagement and encourage insurance purchases.</p>
+        <p>To refresh the visual design and ensure consistency with the updated brand identity.</p>
+      </div>
+    </div>
+
+    <!-- Challenge -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Challenge</p>
+      <h2 class="section-title">What we needed to solve</h2>
+      <ul class="challenge-list">
+        <li>Organizing complex insurance concepts</li>
+        <li>Aligning UI guidelines with the existing website design</li>
+        <li>Refining and prioritizing user feedback requirements</li>
+        <li>Developing a consistent structure across all products</li>
+      </ul>
+    </div>
+
+    <!-- Outcome -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Outcome</p>
+      <h2 class="section-title">What we shipped</h2>
+      <div class="outcome-grid">
+        <div class="outcome-card">
+          <div class="outcome-num">RWD</div>
+          <div class="outcome-desc">Fully responsive website live across all devices</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">12</div>
+          <div class="outcome-desc">Users interviewed across two rounds of usability testing</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">+1</div>
+          <div class="outcome-desc">Follow-up project acquired — revamping the insurance signup flow</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Strategy -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Strategy</p>
+      <h2 class="section-title">Three design principles</h2>
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h4>Consistency</h4>
+          <p>Ensure that all products follow a uniform information structure, making it easier for users to navigate and compare options.</p>
+        </div>
+        <div class="strategy-card">
+          <h4>Straightforward</h4>
+          <p>Utilize clear marketing language and a well-structured information hierarchy, making it easy for users to compare products and determine which one best meets their needs.</p>
+        </div>
+        <div class="strategy-card">
+          <h4>Flexible</h4>
+          <p>Users can browse the pages in a way that feels tailored to their needs — whether taking a quick glance at essential details or exploring more in-depth information when desired.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- User research -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Research</p>
+      <h2 class="section-title">User testing interview before UI design</h2>
+      <div class="section-body">
+        <p>We co-hosted two usability test interviews with our clients, aiming to collect user feedback on the new design to continuously optimize our design.</p>
+        <p>This opportunity also helped clients understand what insurance information target users need when selecting insurance, enabling digital users to manage their insurance more seamlessly.</p>
+      </div>
+      <div class="img-grid-2">
+        <img src="images/LINE_ALBUM_訪談拍攝_241026_1.jpg" alt="User interview session 1" loading="lazy" />
+        <img src="images/LINE_ALBUM_訪談拍攝_241026_2.jpg" alt="User interview session 2" loading="lazy" />
+      </div>
+    </div>
+     <div class="section reveal" style="--d:0ms">
+      <img class="img-full" src="online.png" alt="Final online insurance platform design" loading="lazy" />
+      <img class="img-full" src="images/data.png" alt="Data and analytics screens" loading="lazy" />
+    </div>
+    <div class="section reveal" style="--d:0ms">
+      <div class="img-grid-2">
+        <div>
+          <img class="img-full" style="margin-top:0" src="images/figjam board.png" alt="FigJam research board" loading="lazy" />
+          <p class="img-caption">FigJam research synthesis board</p>
+        </div>
+        <div>
+          <img class="img-full" style="margin-top:0" src="images/insight 簡報.png" alt="Insight presentation" loading="lazy" />
+          <p class="img-caption">Insight presentation to stakeholders</p>
+        </div>
+      </div>
+      <img class="img-full" src="images/訪綱與原型.png" alt="Interview guide and prototype" loading="lazy" />
+      <p class="img-caption">Interview guide and prototype used in testing</p>
+    </div>
+
+    <div class="section reveal" style="--d:0ms">
+      <img class="img-full" src="images/user.png" alt="User research data" loading="lazy" />
+      <p class="img-caption">User research data and personas</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Site map & road map -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Structure</p>
+      <h2 class="section-title">Final structure and roadmap</h2>
+      <div class="section-body" style="margin-bottom:24px">
+        <p><strong>Site map</strong> — After 2 rounds of user testing interviews, we defined the final structure with the client to let the SA team get into the design flow.</p>
+      </div>
+      <img class="img-full" src="images/sitemap.png" alt="Site map" loading="lazy" />
+      <div class="section-body" style="margin:28px 0 16px">
+        <p><strong>Road map</strong> — Define the UI design milestone and arrange the following checkpoint for design and development.</p>
+      </div>
+      <img class="img-full" src="images/road map.png" alt="Road map" loading="lazy" />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Highlight features -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Design</p>
+      <h2 class="section-title">Highlight features</h2>
+
+      <div class="feature-list">
+
+        <div class="feature-item reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">01</div>
+            <h3>Flexible Reviewing Experience</h3>
+            <p>Implemented a layered information approach — key details are displayed upfront, while more complex information is collapsed and accessible only when needed.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/extend.png" alt="Flexible reviewing experience" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="feature-item flip reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">02</div>
+            <h3>Streamlined Insurance Overview</h3>
+            <p>This new layer, absent from the original site, simplifies insurance by offering clear product categories, enabling quick comparisons, and providing brief explanations to guide users.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/category.png" alt="Streamlined insurance overview" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="feature-item reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">03</div>
+            <h3>Focused Calculator Experience</h3>
+            <p>Replaced confusing shortcuts with helpful hints for data entry.</p>
+            <p>Simplified the flow into clear steps: input, coverage review, and cost display. Insurance fees stay fixed at the bottom, making it easy to see how changes affect pricing.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/caculator.png" alt="Calculator experience" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="feature-item flip reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">04</div>
+            <h3>Breaking Up Content into Visual Blocks</h3>
+            <p>Case Studies: Organized with a clear structure — background, insurance needs, incidents, and claims. It makes different products easier to compare and helps users find what they need.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/block-1.png" alt="Visual blocks for content" loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Full design preview -->
+    <div class="section reveal" style="--d:0ms">
+      <img class="img-full" src="online.png" alt="Final online insurance platform design" loading="lazy" />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Takeaways -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Reflection</p>
+      <h2 class="section-title">Takeaways</h2>
+      <div class="takeaway-grid">
+        <div class="takeaway-card">
+          <h4>User interviews</h4>
+          <p>Despite having strong user research validating design decisions, implementation often faces significant organizational hurdles that can delay or prevent changes from being realized.</p>
+        </div>
+        <div class="takeaway-card">
+          <h4>Keep communicating</h4>
+          <p>Real-time communication proved to be essential for building client trust throughout this project. Though I was initially hesitant to ask questions as a newcomer to insurance products, consistent communication ultimately accelerated alignment and built trust.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next step -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Next Step</p>
+      <div class="next-banner">
+        <p>The partnership's still going strong and guess what —</p>
+        <p>we're revamping the whole insurance signup flow!</p>
+        <p>Stay tuned for updates! 😊</p>
+      </div>
+    </div>
+
+    <!-- Back to works -->
+    <div class="back-row reveal" style="--d:0ms">
+      <span class="back-row-label">Explore other works</span>
+      <a class="back-btn" href="index.html#works">← Back to Works</a>
+    </div>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
