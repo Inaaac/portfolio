@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TFCC Banking — Ina Chen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific tokens ── */
+    :root {
+      --accent: #1a3a6b;
+      --accent-mid: #3a6bc4;
+      --accent-light: #e8edf8;
+    }
+
+    .case-hero {
+      background: linear-gradient(155deg, #dce6f7 0%, #c4d4f0 40%, #a8bfe6 100%);
+    }
+
+    .case-label      { background: rgba(26,58,107,0.12); color: var(--accent); }
+    .section-eyebrow { color: var(--accent-mid); }
+    .outcome-num     { color: var(--accent); }
+    .challenge-list li::before { background: var(--accent-mid); }
+    .info-cell-value a { color: var(--accent); }
+
+    .next-banner {
+      background: linear-gradient(135deg, #dce6f7 0%, #b0c4e8 100%);
+    }
+
+    /* Stakeholder list */
+    .stakeholder-list {
+      list-style: none; padding: 0; margin: 12px 0 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .stakeholder-list li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: clamp(13px, 2.4vw, 15px);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .stakeholder-list li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent-mid);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Ina Chen</a>
+      <a class="nav-back" href="index.html#works">← Back to Works</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="case-hero">
+    <div class="case-hero-bg"></div>
+    <div class="case-hero-inner">
+      <div class="case-meta-row reveal" style="--d:0ms">
+        <span class="case-label">UX · PM</span>
+        <span class="case-tags">#PM #UX #banking #web #app</span>
+      </div>
+      <h1 class="case-title reveal" style="--d:120ms">
+        Revamp the Banking Website and App in 6 Months
+      </h1>
+      <img class="case-cover reveal" style="--d:240ms"
+        src="images/tfcc_cover.png"
+        alt="TFCC banking website and app revamp"
+        loading="eager" />
+    </div>
+  </header>
+
+  <!-- ── Body ── -->
+  <main class="case-body">
+
+    <!-- Info grid -->
+    <div class="info-grid reveal" style="--d:0ms">
+      <div class="info-cell">
+        <div class="info-cell-label">Company</div>
+        <div class="info-cell-value">Tamshui First Credit Bank</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Role</div>
+        <div class="info-cell-value">Project manager,<br/>UX designer</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Duration</div>
+        <div class="info-cell-value">2023 · 7 months</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Tools</div>
+        <div class="info-cell-value">Figma · Notion · Excel</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Product</div>
+        <div class="info-cell-value">RWD website,<br/>Hybrid app</div>
+      </div>
+    </div>
+
+    <!-- About the project -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Context</p>
+      <h2 class="section-title">About the project</h2>
+      <div class="section-body">
+        <p>In mid-2024, TFCC is going to stop working with the original service provider and start working with another one while they need a new design.</p>
+      </div>
+
+      <div class="strategy-grid" style="margin-top:28px">
+        <div class="strategy-card">
+          <h4>Project scope</h4>
+          <p>Web / ATM / App — Responsive online banking and hybrid app. Redefine information structure and integrate with new functions for revamp.</p>
+          <img class="img-full" style="margin-top:20px"
+            src="images/tfcc_scope.png"
+            alt="Project scope"
+            loading="lazy" />
+        </div>
+        <div class="strategy-card">
+          <h4>Roadmap</h4>
+          <img class="img-full" style="margin-top:12px"
+            src="images/tfcc_roadmap.png"
+            alt="Project roadmap"
+            loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Stakeholders -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Context</p>
+      <h2 class="section-title">Stakeholders</h2>
+      <ul class="stakeholder-list">
+        <li>TFCC plan and IT department</li>
+        <li>Back-end development partner</li>
+        <li>In-house UI designers</li>
+        <li>Outsourcing front-end developers</li>
+      </ul>
+      <img class="img-full" style="margin-top:20px"
+        src="images/tfcc_stakeholder.png"
+        alt="Stakeholders"
+        loading="lazy" />
+    </div>
+
+    <!-- Challenge -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Challenge</p>
+      <h2 class="section-title">What we needed to solve</h2>
+      <ul class="challenge-list">
+        <li>Tight 4-month timeline for comprehensive design and front-end development</li>
+        <li>Cross-functional communication across 10+ stakeholders</li>
+        <li>Balancing stakeholder requirements with technical development constraints</li>
+      </ul>
+    </div>
+
+    <!-- Outcome -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Outcome</p>
+      <h2 class="section-title">What we delivered</h2>
+      <div class="outcome-grid">
+        <div class="outcome-card">
+          <div class="outcome-num">RWD<br/>+ App</div>
+          <div class="outcome-desc">Responsive website and hybrid app shipped to production</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">90%</div>
+          <div class="outcome-desc">UI/UX design and front-end codebase delivered within a 3-month timeframe</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">10+</div>
+          <div class="outcome-desc">Stakeholders coordinated across client, design, and development teams</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">2 mo</div>
+          <div class="outcome-desc">Client requirement interviews and wireframes completed in a 2-month sprint with weekly catch-ups</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Strategy -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Strategy</p>
+      <h2 class="section-title">Three design principles</h2>
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h4>Simple</h4>
+          <p>The UI should incorporate strong branding colors while maintaining a clean interface that meets functional product usage scenarios.</p>
+        </div>
+        <div class="strategy-card">
+          <h4>Align</h4>
+          <p>From the flow and wireframe stages, we not only addressed client requirements but also aligned with development partners to ensure feasibility and optimize development costs.</p>
+        </div>
+        <div class="strategy-card">
+          <h4>Advice first</h4>
+          <p>As clients lacked digital and online banking experience, we often needed to provide initial ideas to facilitate meaningful discussions on key issues.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="divider"></div>
+
+    <!-- Highlight features -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Design</p>
+      <h2 class="section-title">Highlight features</h2>
+
+      <div class="feature-list">
+
+        <div class="feature-item reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">01</div>
+            <h3>Include Shortcut and Dashboard Framework into the Home Page</h3>
+            <p>Through user requirement interviews, we learned that users typically have multiple accounts. As a result, we designed a more convenient structure for the homepage.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/tfcc_首頁前後.png"
+              alt="Shortcut and dashboard homepage framework"
+              loading="lazy" />
+          </div>
+        </div>
+
+        <div class="feature-item flip reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">02</div>
+            <h3>Define Information Structure of Overview and Detail Page</h3>
+            <p>We established a multi-tiered information structure for banking overview and detail pages, facilitating quick information retrieval at both levels.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/tfcc_貸款.png"
+              alt="Information structure overview and detail page"
+              loading="lazy" />
+          </div>
+        </div>
+
+        <div class="feature-item reveal" style="--d:0ms">
+          <div class="feature-text">
+            <div class="feature-num">03</div>
+            <h3>Big Challenge of Multi-Transfer Trading</h3>
+            <p>As TFCC's multi-transfer feature is mainly used by local small businesses, our design targets a mid-point between personal and corporate scales. We added a labeling feature to preset and frequently used accounts, and redefined tasks considering scenarios where multi-transfers need verification.</p>
+          </div>
+          <div class="feature-img">
+            <img src="images/tfcc_多筆轉帳.png"
+              alt="Multi-transfer trading design"
+              loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Project Story -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Project Story</p>
+      <h2 class="section-title">How we kept things moving</h2>
+      <div class="section-body">
+        <p>Daily catch-up for wireframe discussion. Create online banking screenshot board. Weekly 1–2 catch-up meetings with client and dev partner to push the check progression.</p>
+        <p>To ensure more orderly and rapid subsequent development, timely discussions with designers about various design logics — reducing them to the minimum viable level — can significantly lessen the burden on team collaboration. Such as typography units, the variation in neutral color values, etc.</p>
+      </div>
+      <div class="img-grid-2">
+        <img src="images/tfcc_project_story1.png"
+          alt="Project story — planning board"
+          loading="lazy" />
+        <img src="images/tfcc_project_story2.png"
+          alt="Project story — catch-up meeting"
+          loading="lazy" />
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Takeaways -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Reflection</p>
+      <h2 class="section-title">Takeaways</h2>
+      <div class="takeaway-grid">
+        <div class="takeaway-card">
+          <h4>Gratitude for leadership and collaboration</h4>
+          <p>Initially, I was apprehensive about taking on the responsibility of hosting such a significant project, especially as I was already managing another major website development simultaneously. I'm grateful for my manager's trust in my abilities, but I'm even more appreciative of the unwavering support from my team members.</p>
+        </div>
+        <div class="takeaway-card">
+          <h4>Taking care of myself</h4>
+          <p>While we all desire to expedite progress and push forward with all our might, limited resources often necessitate brief pauses. These moments of respite allow us to discover alternative communication methods and prevent us from falling into a state of emotional exhaustion.</p>
+        </div>
+        <div class="takeaway-card">
+          <h4>Project success requires more than effort</h4>
+          <p>It demands an understanding of the subtle dynamics and unwritten rules within hierarchical organizational structures.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next step -->
+    <div class="section reveal" style="--d:0ms">
+      <p class="section-eyebrow">Next Step</p>
+      <div class="next-banner">
+        <p>The banking digital experience keeps evolving —</p>
+        <p>more features and refinements are on the way!</p>
+        <p>Stay tuned 🏦</p>
+      </div>
+    </div>
+
+    <!-- Back to works -->
+    <div class="back-row reveal" style="--d:0ms">
+      <span class="back-row-label">Explore other works</span>
+      <a class="back-btn" href="index.html#works">← Back to Works</a>
+    </div>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
