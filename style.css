@@ -142,11 +142,10 @@ body {
 .hero-title {
   margin: 0 0 clamp(20px, 3.5vw, 32px);
   font-family: "Syne", sans-serif;
-  font-weight: 800;
-  font-size: clamp(3.35rem, 14vw, 8.75rem);
+  font-weight: 700;
+  font-size: clamp(42px, 8vw, 72px);
   line-height: 0.92;
   letter-spacing: -0.03em;
-  text-transform: uppercase;
 }
 
 .hero-title-line { display: block; }
@@ -181,6 +180,95 @@ body {
   padding: clamp(56px, 10vw, 110px) 0 clamp(72px, 12vw, 128px);
 }
 
+.impact-panel {
+  width: var(--container);
+  margin: 0 auto clamp(64px, 10vw, 104px);
+}
+
+.impact-copy {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: clamp(22px, 4vw, 32px);
+}
+
+@media (min-width: 800px) {
+  .impact-copy {
+    grid-template-columns: minmax(160px, 0.34fr) minmax(0, 0.66fr);
+    align-items: end;
+    gap: clamp(28px, 5vw, 56px);
+  }
+}
+
+.impact-kicker {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.impact-heading {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.45rem, 4vw, 2.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 680px) {
+  .impact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.impact-card {
+  min-height: 100%;
+  padding: clamp(22px, 4vw, 30px);
+  border-radius: var(--card-radius);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.88), rgba(255,255,255,0.54)),
+    var(--bg-page);
+  border: 1px solid rgba(10, 10, 10, 0.07);
+  box-shadow:
+    0 20px 42px rgba(18,18,18,0.06),
+    0 4px 12px rgba(18,18,18,0.035);
+}
+
+.impact-number {
+  margin: 0 0 clamp(28px, 6vw, 44px);
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 8vw, 4.65rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.impact-card h3 {
+  margin: 0 0 10px;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.24rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.impact-card p:last-child {
+  margin: 0;
+  font-size: clamp(13px, 2.4vw, 14px);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
 .work-header {
   text-align: center;
   margin-bottom: clamp(40px, 7vw, 72px);
@@ -201,7 +289,6 @@ body {
   font-weight: 800;
   font-size: clamp(1.05rem, 3.2vw, 1.5rem);
   letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .projects {
@@ -370,6 +457,16 @@ body {
   margin-bottom: 12px;
 }
 
+.about-eyebrow,
+.about-section-label {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 242, 242, 0.46);
+}
+
 .about-heading {
   margin: 0 0 24px;
   font-family: "Syne", sans-serif;
@@ -403,6 +500,7 @@ body {
   font-size: clamp(14px, 2.4vw, 16px);
   line-height: 1.75;
   color: rgba(242, 242, 242, 0.65);
+  max-width: 68ch;
 }
 
 .about-link {
@@ -452,6 +550,118 @@ body {
   object-fit: cover;
   object-position: top center;
   filter: grayscale(15%);
+}
+
+.about-slogan {
+  width: var(--container);
+  margin: clamp(64px, 11vw, 112px) auto;
+  padding: clamp(28px, 5vw, 48px) 0;
+  border-top: 1px solid rgba(242, 242, 242, 0.12);
+  border-bottom: 1px solid rgba(242, 242, 242, 0.12);
+}
+
+.about-slogan p {
+  margin: 0;
+  max-width: 13ch;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: #f2f2f2;
+}
+
+.about-story-grid {
+  width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 7vw, 72px);
+  align-items: start;
+}
+
+@media (min-width: 820px) {
+  .about-story-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
+  }
+}
+
+.about-story h3,
+.about-writing h3 {
+  margin: 0 0 18px;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.about-writing-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(242, 242, 242, 0.14);
+}
+
+.about-writing-link {
+  display: grid;
+  gap: 8px;
+  padding: 22px 0;
+  color: #f2f2f2;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(242, 242, 242, 0.14);
+}
+
+.about-writing-meta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 242, 242, 0.42);
+}
+
+.about-writing-title {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  letter-spacing: -0.02em;
+  transition: color 0.2s;
+}
+
+.about-writing-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(242, 242, 242, 0.62);
+}
+
+.about-writing-cta {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hero-gradient-end);
+}
+
+.about-writing-link:hover .about-writing-title {
+  color: var(--hero-gradient-end);
+}
+
+.about-closing {
+  width: var(--container);
+  margin: clamp(56px, 9vw, 96px) auto 0;
+  padding-top: clamp(28px, 5vw, 44px);
+  border-top: 1px solid rgba(242, 242, 242, 0.12);
+}
+
+.about-closing p:not(.about-section-label) {
+  margin: 0 0 16px;
+  max-width: 72ch;
+  font-size: clamp(15px, 2.6vw, 18px);
+  line-height: 1.75;
+  color: rgba(242, 242, 242, 0.68);
+}
+
+.about-foundation-link {
+  margin-top: 4px;
+  margin-bottom: clamp(18px, 4vw, 34px);
 }
 
 /* ── Footer ── */
